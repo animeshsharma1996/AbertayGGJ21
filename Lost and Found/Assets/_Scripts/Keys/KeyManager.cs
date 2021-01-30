@@ -50,8 +50,8 @@ public class KeyManager : MonoBehaviour
         }
 
         // win - all keys true
-        Debug.Log("you win");
         //transition to next level
+        GameManager.Instance.FinishLevel();
         // reset manager keys
         ResetKeys();
     }
