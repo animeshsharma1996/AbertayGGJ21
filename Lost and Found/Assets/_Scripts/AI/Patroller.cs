@@ -4,12 +4,12 @@ using System.Collections;
 
 public class Patroller : MonoBehaviour
 {
-    [SerializeField] private Transform[] points = null;
+    public Transform[] points = null;
     private int destPoint = 0;
     private NavMeshAgent agent;
 
 
-    private void Start()
+    public void Initialise()
     {
         agent = GetComponent<NavMeshAgent>();
 
