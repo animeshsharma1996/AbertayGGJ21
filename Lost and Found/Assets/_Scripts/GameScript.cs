@@ -8,5 +8,6 @@ public class GameScript : MonoBehaviour
     private void Start()
     {
         EnemySpawner.Instance.Initialise();
+        AudioManager.Instance.Initialise();
     }
 }
