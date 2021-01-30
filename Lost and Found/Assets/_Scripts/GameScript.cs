@@ -7,6 +7,6 @@ public class GameScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GameManager.Instance.Initialise();
+        //GameManager.Instance.Initialise();
     }
 }
