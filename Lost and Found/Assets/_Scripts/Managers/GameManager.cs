@@ -29,12 +29,6 @@ public class GameManager : Singleton<GameManager>
         StartLevel();
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        
-    }
-
     public void FinishLevel()
     {
         Debug.Log("you win");
@@ -61,5 +55,14 @@ public class GameManager : Singleton<GameManager>
     {
         lostObj.transform.position = CurrentLevel.LostSpawnTransform.position;
         foundObj.transform.position = CurrentLevel.FoundSpawnTransform.position;
+    }
+
+    public void RestartLevel()
+    {
+        // restart players to spawn position
+        // reset lives to 3
+
+        // reset all keys
+        // reset all enemies
     }
 }

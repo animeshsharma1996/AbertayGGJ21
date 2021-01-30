@@ -38,6 +38,7 @@ public class KeyManager : MonoBehaviour
     {
         Debug.Log("Completed keys length = " + completedKeys.Length + " and index is " + index);
         completedKeys[index-1] = true;
+        UIManager.Instance.KeyCollected(index);
         CheckWin();
     }
 
