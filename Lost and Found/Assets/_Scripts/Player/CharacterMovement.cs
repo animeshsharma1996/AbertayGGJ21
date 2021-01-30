@@ -12,20 +12,39 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float maxMovementSpeed;
 
+    private Killable killable;
     private CharacterController controller;
-
     [SerializeField]
     private List<string> acceptedKeyCodes;
+
+    public bool CanMove
+    {
+        get
+        {
+            if (killable == null)
+            {
+                return true;
+            }
+            else
+            {
+                return killable.IsAlive;
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        killable = GetComponent<Killable>();
         controller = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
-        MoveUpdate();
+        if (CanMove)
+        {
+            MoveUpdate();
+        }
     }
 
     void MoveUpdate()

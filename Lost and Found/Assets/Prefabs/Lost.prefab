@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 799713222989190141}
   - component: {fileID: 799713222989190137}
   - component: {fileID: 799713222989190136}
+  - component: {fileID: 1802230935}
+  - component: {fileID: 6517265914790535858}
   m_Layer: 0
   m_Name: Lost
   m_TagString: Untagged
@@ -130,3 +132,27 @@ MonoBehaviour:
   acceptedKeyCodes:
   - Lost Horizontal
   - Lost Vertical
+--- !u!114 &1802230935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799713222989190130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f8ef525e25dfb4fadfc058d88e53ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6517265914790535858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799713222989190130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a44daece6947324e8b9ef6a4010a31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
