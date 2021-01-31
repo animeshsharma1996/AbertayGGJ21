@@ -43,9 +43,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.24313726, g: 0.14593242, b: 0.099443145, a: 1}
-  m_Intensity: 0.95492965
-  m_Range: 4.16497
+  m_Color: {r: 0.24313726, g: 0.16855326, b: 0.13275294, a: 1}
+  m_Intensity: 0.47746482
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 12
+  m_Intensity: 6
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
