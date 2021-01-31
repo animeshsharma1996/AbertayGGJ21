@@ -110,6 +110,12 @@ MonoBehaviour:
   cameraTransform: {fileID: 4790526310009082376}
   lostSpawnTransform: {fileID: 4790526310672660181}
   foundSpawnTransform: {fileID: 4790526309738029957}
+  keyObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4790526310672660180
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,6 +66,7 @@ Lost and Found/Library/shadercompiler-UnityShaderCompiler.exe0.log
 Lost and Found/Library/SourceAssetDB
 
 Lost and Found/Library/
+*.cache
 
 Lost and Found/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
 

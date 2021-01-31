@@ -26,7 +26,7 @@ public class KeyManager : MonoBehaviour
         completedKeys = new bool[maxKeys];
     }
 
-    private void ResetKeys()
+    public void ResetKeys()
     {
         for (int i = 0; i < completedKeys.Length; i++)
         {
@@ -38,6 +38,7 @@ public class KeyManager : MonoBehaviour
     {
         Debug.Log("Completed keys length = " + completedKeys.Length + " and index is " + index);
         completedKeys[index-1] = true;
+        UIManager.Instance.KeyCollected(index);
         CheckWin();
     }
 
