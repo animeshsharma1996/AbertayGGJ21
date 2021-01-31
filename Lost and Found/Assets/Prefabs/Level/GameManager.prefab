@@ -48,4 +48,3 @@ MonoBehaviour:
   foundObj: {fileID: 0}
   levelManager:
   - {fileID: 0}
-  - {fileID: 0}
