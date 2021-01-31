@@ -28,16 +28,17 @@ public class Killable : MonoBehaviour
         sr = GetComponent<MeshRenderer>().material;
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (enemy != null && enemy.IsLethal)
         {
-            CheckIfDead();
+            //CheckIfDead();
         }
     }
 
-    private void CheckIfDead()
+    public void CheckIfDead()
     {
         Debug.Log("iS COOLING DOWN = " + IsCoolingDown);
         if (IsCoolingDown) { return; }
