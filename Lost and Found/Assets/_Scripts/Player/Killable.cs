@@ -11,7 +11,7 @@ public class Killable : MonoBehaviour
     private int currentLives = 3;
     [SerializeField]
     private float cooldownTimer = 4.0f;
-    private Material sr;
+    private SpriteRenderer sr;
 
     public bool IsAlive { get => isAlive; set => isAlive = value; }
     public bool IsCoolingDown { get => isCoolingDown; set => isCoolingDown = value; }
@@ -25,7 +25,7 @@ public class Killable : MonoBehaviour
         flash = DamageFlash();
         currentLives = maxLives;
         isAlive = true;
-        sr = GetComponent<MeshRenderer>().material;
+        sr = GetComponent<SpriteRenderer>();
     }
 
 
@@ -36,6 +36,12 @@ public class Killable : MonoBehaviour
         {
             //CheckIfDead();
         }
+    }
+
+    private void OnEnable()
+    {
+        currentLives = 3;
+        Debug.Log("Current lives is " + currentLives);
     }
 
     public void CheckIfDead()
@@ -75,6 +81,7 @@ public class Killable : MonoBehaviour
             yield return 0;
         }
         StopCoroutine(flash);
+        sr.color = Color.white;
         IsCoolingDown = false;
     }
 
