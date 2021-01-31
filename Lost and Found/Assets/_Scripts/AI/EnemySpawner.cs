@@ -13,10 +13,13 @@ public class EnemySpawner : Singleton<EnemySpawner>
     {
         for(int i = 0; i < enemyPositions.Length; ++i)
         {
-            GameObject enemyObject = Instantiate(enemy, enemyPositions[i].patrolPoints[0].position, enemyPositions[i].patrolPoints[0].rotation);
+            if (enemyPositions[i].isActiveAndEnabled)
+            {
+                GameObject enemyObject = Instantiate(enemy, enemyPositions[i].patrolPoints[0].position, enemyPositions[i].patrolPoints[0].rotation);
 
-            enemyObject.GetComponent<Patroller>().points = enemyPositions[i].patrolPoints;
-            enemyObject.GetComponent<Patroller>().Initialise();
+                enemyObject.GetComponent<Patroller>().points = enemyPositions[i].patrolPoints;
+                enemyObject.GetComponent<Patroller>().Initialise();
+            }
         }
     }
 }
