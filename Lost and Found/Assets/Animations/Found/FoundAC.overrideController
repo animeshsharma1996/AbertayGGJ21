@@ -8,4 +8,12 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: FoundAC
   m_Controller: {fileID: 9100000, guid: 40a56bebb7e7cb74cb72f0dab3ada9c9, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7bf725ac319021d48b91b698c5ae2430, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c9685063757c99429bd17250b877059, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2d46b9755ceba954d8786a821e9e0c6e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aa2420d804743944aa648f053432d043, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 59d93aada3d3c764bb8060facb97466c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: fc1191d0f12b77140a11d589a72df6b4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: be68942e2a73e3640b773ef5c3024e11, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cc1bdf31e9ee9fe47a25315de9f72769, type: 2}
