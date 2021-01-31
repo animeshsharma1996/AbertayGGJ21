@@ -7,7 +7,7 @@ public class GameScript : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        EnemySpawner.Instance.Initialise();
+        //EnemySpawner.Instance.Initialise();
         AudioManager.Instance.Initialise();
     }
 }

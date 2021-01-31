@@ -9,6 +9,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
     //[SerializeField] private int enemyPool = 0;
     [SerializeField] private PatrolPoints[] enemyPositions = null;
 
+    public GameObject[] levelPoints = null;
+
     public void Initialise()
     {
         for(int i = 0; i < enemyPositions.Length; ++i)

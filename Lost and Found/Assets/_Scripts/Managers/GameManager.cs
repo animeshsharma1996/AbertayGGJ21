@@ -50,6 +50,8 @@ public class GameManager : Singleton<GameManager>
         // transition camera to next camera transform
         // wait then start next level
         CameraTransitionToNewLevel();
+        SwitchPatrolPoints();
+
     }
 
     internal void CameraTransitionToNewLevel()
@@ -79,7 +81,27 @@ public class GameManager : Singleton<GameManager>
         UIManager.Instance.ResetAllKeysUI();
         KeyManager.instance.ResetKeys();
         UIManager.Instance.ResetAllLivesUI();
+
+        SwitchPatrolPoints();
     }
+
+    private void SwitchPatrolPoints()
+    {
+        switch (currentLevelIndex)
+        {
+            case 0:
+                EnemySpawner.Instance.levelPoints[0].SetActive(true);
+                EnemySpawner.Instance.levelPoints[1].SetActive(false);
+                EnemySpawner.Instance.Initialise();
+            break;
+            case 1:
+                EnemySpawner.Instance.levelPoints[1].SetActive(true);
+                EnemySpawner.Instance.levelPoints[0].SetActive(false);
+                EnemySpawner.Instance.Initialise();
+            break;
+        }
+    }
+
 
     public void RestartLevel()
     {

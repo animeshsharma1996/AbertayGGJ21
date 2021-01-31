@@ -17,12 +17,6 @@ public class LevelManager : MonoBehaviour
     public Transform LostSpawnTransform { get => lostSpawnTransform; }
     public Transform FoundSpawnTransform { get => foundSpawnTransform; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void ResetKeyObjects()
     {
         foreach (Key key in keyObjects)
