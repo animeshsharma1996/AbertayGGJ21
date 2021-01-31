@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1907476091}
   - component: {fileID: 7277597899324658675}
   - component: {fileID: 3461677723291327857}
+  - component: {fileID: 1907476097}
   m_Layer: 0
   m_Name: Found
   m_TagString: Untagged
@@ -165,3 +166,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1907476097
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558273706406145566}
+  m_Enabled: 1

@@ -13,6 +13,11 @@ public class Killable : MonoBehaviour
     private float cooldownTimer = 4.0f;
     private SpriteRenderer sr;
 
+    [SerializeField]
+    private AudioSource lostHurtAudio;
+    [SerializeField]
+    private AudioSource lostDieAudio;
+
     public bool IsAlive { get => isAlive; set => isAlive = value; }
     public bool IsCoolingDown { get => isCoolingDown; set => isCoolingDown = value; }
 
@@ -55,6 +60,7 @@ public class Killable : MonoBehaviour
         if (currentLives == 0)
         {
             //kill this
+            lostDieAudio.Play();
             isAlive = false;
             gameObject.SetActive(false);
             currentLives = maxLives;
@@ -66,6 +72,7 @@ public class Killable : MonoBehaviour
             // start damage cooldown
             if (sr != null)
             {
+                lostHurtAudio.Play();
                 StartCoroutine(DamageCooldown());
             }
         }

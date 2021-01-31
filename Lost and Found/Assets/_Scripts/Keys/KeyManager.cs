@@ -11,6 +11,8 @@ public class KeyManager : MonoBehaviour
     private const int maxKeys = 5;
     private bool[] completedKeys;
 
+    private AudioSource keyCollectAudioSource;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -24,6 +26,7 @@ public class KeyManager : MonoBehaviour
         }
 
         completedKeys = new bool[maxKeys];
+        keyCollectAudioSource = GetComponent<AudioSource>();
     }
 
     public void ResetKeys()
@@ -40,6 +43,7 @@ public class KeyManager : MonoBehaviour
         completedKeys[index-1] = true;
         UIManager.Instance.KeyCollected(index);
         CheckWin();
+        keyCollectAudioSource.Play();
     }
 
     private void CheckWin()
