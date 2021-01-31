@@ -49,10 +49,10 @@ public class Key : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void FixedUpdate()
-    {
-        float dist = Vector3.Distance(gameObject.transform.position, lostObj.transform.position);
-        float distScale = dist > maxDistance ? 0f : dist < minDistance ? 1f : 1 - (dist - minDistance / maxDistance - minDistance);
-        meshRenderer.material.color = Vector4.Lerp(new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), distScale);
-    }
+    //private void FixedUpdate()
+    //{
+    //    float dist = Vector3.Distance(gameObject.transform.position, lostObj.transform.position);
+    //    float distScale = dist > maxDistance ? 0f : dist < minDistance ? 1f : 1 - (dist - minDistance / maxDistance - minDistance);
+    //    meshRenderer.material.color = Vector4.Lerp(new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), distScale);
+    //}
 }

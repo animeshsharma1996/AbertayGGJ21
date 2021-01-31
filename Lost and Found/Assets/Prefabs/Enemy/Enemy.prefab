@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebad41a9d96bf7e42968740079448a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  fovAngle: 90
+  range: 2
+  fovAngle: 70
   players: []
 --- !u!82 &1323714905
 AudioSource:
