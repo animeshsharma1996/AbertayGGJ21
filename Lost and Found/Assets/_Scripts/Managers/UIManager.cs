@@ -31,6 +31,7 @@ public class UIManager : Singleton<UIManager>
     internal void LifeLost(int currentLives)
     {
         livesUI[currentLives].sprite = lightOff;
+        livesUI[currentLives].gameObject.GetComponent<AudioSource>().Play();
     }
 
     internal void ResetAllKeysUI()

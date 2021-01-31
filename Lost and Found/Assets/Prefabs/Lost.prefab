@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTimer: 4
+  lostHurtAudio: {fileID: 0}
+  lostDieAudio: {fileID: 0}
 --- !u!212 &54852469946372556
 SpriteRenderer:
   m_ObjectHideFlags: 0
