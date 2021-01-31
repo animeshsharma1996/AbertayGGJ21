@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    [SerializeField]
-    private int sceneIndexToLoad;
+    [SerializeField] private int sceneIndexToLoad;
+    [SerializeField] private GameObject mainMenuCanvas;
 
     public void ChangeToNextScene()
     {
-        SceneManager.LoadSceneAsync(sceneIndexToLoad);
+        SceneManager.LoadScene(sceneIndexToLoad);
+        //SceneManager.LoadSceneAsync(sceneIndexToLoad);
     }
+
+    public void PlayGame()
+    {
+        mainMenuCanvas.SetActive(false);
+    }
+
 }

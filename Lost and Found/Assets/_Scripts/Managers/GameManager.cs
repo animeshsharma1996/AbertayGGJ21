@@ -15,6 +15,8 @@ public class GameManager : Singleton<GameManager>
     private List<LevelManager> levelManager = new List<LevelManager>();
     private int currentLevelIndex = 0;
 
+    [SerializeField] private GameObject mainMenuCanvas;
+
     private LevelManager CurrentLevel
     {
         get
@@ -43,7 +45,8 @@ public class GameManager : Singleton<GameManager>
         else
         {
             // completed all levels!
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            mainMenuCanvas.SetActive(true);
         }
     }
 
