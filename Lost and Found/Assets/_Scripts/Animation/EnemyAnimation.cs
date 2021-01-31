@@ -18,7 +18,10 @@ public class EnemyAnimation : MonoBehaviour
         Vector3 cameraVector = Camera.main.transform.forward;
         Vector3 enemyVector = transform.forward;
 
-        switch(Vector3.Dot(cameraVector,enemyVector))
+        float dotProduct = Vector3.Dot(cameraVector, enemyVector);
+
+        Debug.Log(dotProduct);
+        switch (dotProduct)
         {
             case -1:
                 anim.SetInteger("EnemyModifier", 0);
