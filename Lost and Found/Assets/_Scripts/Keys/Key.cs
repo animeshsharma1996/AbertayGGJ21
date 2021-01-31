@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     private int keyID;
     private bool isCollectable = true;
 
-    private static float maxDistance = 10f;
+    private static float maxDistance = 100f;
     private static float minDistance = 1f;
 
     private Renderer meshRenderer;
