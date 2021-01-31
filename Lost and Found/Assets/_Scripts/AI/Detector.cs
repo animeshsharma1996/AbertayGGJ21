@@ -25,11 +25,17 @@ public class Detector : MonoBehaviour
             if(angle <= fovAngle*0.5f)
             {
                 RaycastHit hit;
-                if(Physics.Raycast(transform.position, vectorToPlayer.normalized, out hit, range))
+                if (Physics.Raycast(transform.position, vectorToPlayer.normalized, out hit, range))
                 {
-                    if(hit.collider.gameObject.tag == "Player")
+                    GameObject playerFound = hit.collider.gameObject;
+                    if (hit.collider.gameObject.tag == "Player")
                     {
-                        Debug.Log("Detected");
+                        Killable killable = playerFound.GetComponent<Killable>();
+                        if(killable != null)
+                        {
+                            killable.CheckIfDead();
+                            Debug.Log("Detected");
+                        }
                     }
                 }
             }

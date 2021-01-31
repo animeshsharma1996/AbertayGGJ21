@@ -8,7 +8,7 @@ public class Key : MonoBehaviour
     private int keyID;
     private bool isCollectable = true;
 
-    private static float maxDistance = 10f;
+    private static float maxDistance = 100f;
     private static float minDistance = 1f;
 
     private Renderer meshRenderer;
@@ -49,12 +49,10 @@ public class Key : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float dist = Vector3.Distance(gameObject.transform.position, lostObj.transform.position);
         float distScale = dist > maxDistance ? 0f : dist < minDistance ? 1f : 1 - (dist - minDistance / maxDistance - minDistance);
-        Debug.Log("Distscale = " + distScale);
         meshRenderer.material.color = Vector4.Lerp(new Color(1f, 1f, 1f, 0f), new Color(1f, 1f, 1f, 1f), distScale);
-
     }
 }

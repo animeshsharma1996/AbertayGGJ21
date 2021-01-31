@@ -11,6 +11,11 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private List<Image> keysUI = new List<Image>(5);
 
+    [SerializeField]
+    private Sprite lightOn;
+    [SerializeField]
+    private Sprite lightOff;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +30,7 @@ public class UIManager : Singleton<UIManager>
 
     internal void LifeLost(int currentLives)
     {
-        livesUI[currentLives].color = Color.gray;
+        livesUI[currentLives].sprite = lightOff;
     }
 
     internal void ResetAllKeysUI()
@@ -41,8 +46,7 @@ public class UIManager : Singleton<UIManager>
     {
         foreach (Image life in livesUI)
         {
-            life.enabled = true;
-            life.color = Color.white;
+            life.sprite = lightOn;
         }
     }
 }
