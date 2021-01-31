@@ -26,7 +26,7 @@ public class KeyManager : MonoBehaviour
         completedKeys = new bool[maxKeys];
     }
 
-    private void ResetKeys()
+    public void ResetKeys()
     {
         for (int i = 0; i < completedKeys.Length; i++)
         {

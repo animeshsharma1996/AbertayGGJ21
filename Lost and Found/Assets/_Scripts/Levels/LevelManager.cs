@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     private Transform lostSpawnTransform;
     [SerializeField]
     private Transform foundSpawnTransform;
+    [SerializeField]
+    private List<Key> keyObjects;
 
     public Transform CameraTransform { get => cameraTransform; }
     public Transform LostSpawnTransform { get => lostSpawnTransform; }
@@ -21,9 +23,11 @@ public class LevelManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetKeyObjects()
     {
-        
+        foreach (Key key in keyObjects)
+        {
+            key.gameObject.SetActive(true);
+        }
     }
 }

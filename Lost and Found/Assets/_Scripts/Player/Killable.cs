@@ -13,7 +13,7 @@ public class Killable : MonoBehaviour
     private float cooldownTimer = 4.0f;
     private Material sr;
 
-    public bool IsAlive { get => isAlive; }
+    public bool IsAlive { get => isAlive; set => isAlive = value; }
     public bool IsCoolingDown { get => isCoolingDown; set => isCoolingDown = value; }
 
     // coroutines
@@ -39,6 +39,7 @@ public class Killable : MonoBehaviour
 
     private void CheckIfDead()
     {
+        Debug.Log("iS COOLING DOWN = " + IsCoolingDown);
         if (IsCoolingDown) { return; }
         
         currentLives--;
@@ -51,6 +52,7 @@ public class Killable : MonoBehaviour
             gameObject.SetActive(false);
             currentLives = maxLives;
             GameManager.Instance.RestartLevel();
+            IsCoolingDown = false;
         }
         else
         {

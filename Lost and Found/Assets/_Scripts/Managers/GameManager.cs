@@ -55,13 +55,20 @@ public class GameManager : Singleton<GameManager>
     {
         lostObj.transform.position = CurrentLevel.LostSpawnTransform.position;
         foundObj.transform.position = CurrentLevel.FoundSpawnTransform.position;
+        lostObj.SetActive(true);
+        lostObj.GetComponent<Killable>().IsAlive = true;
+        //foundObj.SetActive(true);
     }
 
     public void RestartLevel()
     {
         // restart players to spawn position
+        StartLevel();
         // reset lives to 3
-
+        UIManager.Instance.ResetAllKeysUI();
+        KeyManager.instance.ResetKeys();
+        CurrentLevel.ResetKeyObjects();
+        UIManager.Instance.ResetAllLivesUI();
         // reset all keys
         // reset all enemies
     }
