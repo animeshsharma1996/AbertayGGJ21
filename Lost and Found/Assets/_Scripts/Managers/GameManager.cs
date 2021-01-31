@@ -35,6 +35,7 @@ public class GameManager : Singleton<GameManager>
         if (currentLevelIndex < levelManager.Count - 1)
         {
             // transition to next level
+            Debug.Log("Moving to next level");
             currentLevelIndex++;
             MoveToNextLevel();
         }
@@ -48,6 +49,23 @@ public class GameManager : Singleton<GameManager>
     {
         // transition camera to next camera transform
         // wait then start next level
+        CameraTransitionToNewLevel();
+    }
+
+    internal void CameraTransitionToNewLevel()
+    {
+        StartCoroutine(MoveCamera());
+    }
+    private IEnumerator MoveCamera()
+    {
+        Camera camera = Camera.main;
+        float movementSpeed = 25f;
+        while (Vector3.Distance(camera.transform.position, CurrentLevel.CameraTransform.position) > movementSpeed * Time.deltaTime)
+        {
+            camera.transform.position = Vector3.MoveTowards(camera.transform.position, CurrentLevel.CameraTransform.position, movementSpeed * Time.deltaTime);
+            yield return null;
+        }
+        camera.transform.position = CurrentLevel.CameraTransform.position;
         StartLevel();
     }
 
@@ -58,6 +76,9 @@ public class GameManager : Singleton<GameManager>
         lostObj.SetActive(true);
         lostObj.GetComponent<Killable>().IsAlive = true;
         //foundObj.SetActive(true);
+        UIManager.Instance.ResetAllKeysUI();
+        KeyManager.instance.ResetKeys();
+        UIManager.Instance.ResetAllLivesUI();
     }
 
     public void RestartLevel()
@@ -69,7 +90,6 @@ public class GameManager : Singleton<GameManager>
         KeyManager.instance.ResetKeys();
         CurrentLevel.ResetKeyObjects();
         UIManager.Instance.ResetAllLivesUI();
-        // reset all keys
         // reset all enemies
     }
 }

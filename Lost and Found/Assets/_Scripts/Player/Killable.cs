@@ -37,6 +37,12 @@ public class Killable : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        currentLives = 3;
+        Debug.Log("Current lives is " + currentLives);
+    }
+
     private void CheckIfDead()
     {
         Debug.Log("iS COOLING DOWN = " + IsCoolingDown);
