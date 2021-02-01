@@ -43,5 +43,14 @@ public class Patroller : MonoBehaviour
         // close to the current one.
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
             GotoNextPoint();
+
+        //RotateEnemy();
+    }
+
+    private void RotateEnemy()
+    {
+        Vector3 lookAtVector = Camera.main.transform.position;
+        lookAtVector.y = transform.position.y;
+        transform.LookAt(lookAtVector);
     }
 }
