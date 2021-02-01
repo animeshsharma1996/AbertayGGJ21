@@ -18,27 +18,23 @@ public class EnemyAnimation : MonoBehaviour
         Vector3 cameraVector = Camera.main.transform.forward;
         Vector3 enemyVector = transform.forward;
 
-        float dotProduct = Vector3.Dot(cameraVector, enemyVector);
+        float angle = Vector3.Angle(cameraVector, enemyVector);
 
-        Debug.Log(dotProduct);
-        switch (dotProduct)
+        if (angle == 90f)
         {
-            case -1:
-                anim.SetInteger("EnemyModifier", 0);
-                break;
-            case 0:
-                if(Vector3.Cross(cameraVector,enemyVector).magnitude > 0)
-                {
-                    anim.SetInteger("EnemyModifier", 3);
-                }
-                else
-                {
-                    anim.SetInteger("EnemyModifier", 1);
-                }
-                break; 
-            case 1:
-                anim.SetInteger("EnemyModifier", 2);
-                break;
+            anim.SetInteger("EnemyModifier", 1);
+        }
+        else if (angle == 270f)
+        {
+            anim.SetInteger("EnemyModifier", 3);
+        }
+        else if ((angle > 270f && angle < 360f) || (angle >= 0f && angle < 90f))
+        {
+            anim.SetInteger("EnemyModifier", 2);
+        }
+        else
+        {
+            anim.SetInteger("EnemyModifier", 0);
         }
     }
 }
