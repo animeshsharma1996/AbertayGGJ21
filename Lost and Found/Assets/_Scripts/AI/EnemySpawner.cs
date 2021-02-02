@@ -35,4 +35,15 @@ public class EnemySpawner : Singleton<EnemySpawner>
             enemies.Clear();
         }
     }
+
+    public void SetAllEnemies(bool value)
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemies.Count != 0)
+            {
+                enemy.SetActive(value);
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] private KeyCode up;
     [SerializeField] private KeyCode down;
     [SerializeField] private KeyCode right;
-    [SerializeField] private KeyCode left;
+    [SerializeField] private KeyCode left; 
+    
+    [SerializeField] private string horizontal;
+    [SerializeField] private string vertical;
 
     // Start is called before the first frame update
     private void Start()
@@ -19,22 +23,22 @@ public class PlayerAnimation : MonoBehaviour
 
     public void OnUpdate()
     {
-        if(Input.GetKey(up))
+        if (CrossPlatformInputManager.GetAxis(vertical) > 0)
         {
-            anim.SetInteger("EnemyModifier",2);
+            anim.SetInteger("EnemyModifier", 2);
         }
-        
-        if(Input.GetKey(down))
+
+        if (CrossPlatformInputManager.GetAxis(vertical) < 0)
         {
             anim.SetInteger("EnemyModifier", 0);
         }
 
-        if (Input.GetKey(right))
+        if (CrossPlatformInputManager.GetAxis(horizontal) > 0)
         {
             anim.SetInteger("EnemyModifier", 1);
         }
 
-        if (Input.GetKey(left))
+        if (CrossPlatformInputManager.GetAxis(horizontal) < 0)
         {
             anim.SetInteger("EnemyModifier", 3);
         }

@@ -65,7 +65,7 @@ public class GameScript : MonoBehaviour
     private void RestartLevel()
     {
         GameManager.Instance.LostObj.SetActive(false);
-        GameManager.Instance.FoundObj.SetActive(false);
+        //GameManager.Instance.FoundObj.SetActive(false);
         GameManager.Instance.RestartLevel();
 
         foreach (Patroller patroller in patrollers)

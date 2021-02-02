@@ -81,6 +81,7 @@ public class GameManager : Singleton<GameManager>
 
     private void StartLevel()
     {
+        foundObj.SetActive(false);
         lostObj.transform.position = CurrentLevel.LostSpawnTransform.position;
         foundObj.transform.position = CurrentLevel.FoundSpawnTransform.position;
         lostObj.SetActive(true);
@@ -89,7 +90,7 @@ public class GameManager : Singleton<GameManager>
         UIManager.Instance.ResetAllKeysUI();
         KeyManager.instance.ResetKeys();
         UIManager.Instance.ResetAllLivesUI();
-
+        EnemySpawner.Instance.SetAllEnemies(true);
         SwitchPatrolPoints();
     }
 
