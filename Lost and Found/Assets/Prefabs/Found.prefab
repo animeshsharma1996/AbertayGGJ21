@@ -194,6 +194,8 @@ MonoBehaviour:
   down: 274
   right: 275
   left: 276
+  horizontal: Found Horizontal
+  vertical: Found Vertical
 --- !u!1 &2661291246018642672
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +315,8 @@ MonoBehaviour:
   down: 274
   right: 275
   left: 276
+  horizontal: Found Horizontal
+  vertical: Found Vertical
 --- !u!1001 &1651517661
 PrefabInstance:
   m_ObjectHideFlags: 0

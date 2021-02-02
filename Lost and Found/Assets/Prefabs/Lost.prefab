@@ -201,6 +201,8 @@ MonoBehaviour:
   down: 115
   right: 100
   left: 97
+  horizontal: Lost Horizontal
+  vertical: Lost Vertical
 --- !u!1 &2134143849827949351
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +322,8 @@ MonoBehaviour:
   down: 115
   right: 100
   left: 97
+  horizontal: Lost Horizontal
+  vertical: Lost Vertical
 --- !u!1001 &267692050
 PrefabInstance:
   m_ObjectHideFlags: 0
