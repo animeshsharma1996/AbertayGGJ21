@@ -12,8 +12,7 @@ public class EnemyAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    private void Update()
+    public void OnUpdate()
     {
         Vector3 cameraVector = Camera.main.transform.forward;
         Vector3 enemyVector = transform.forward;

@@ -37,7 +37,7 @@ public class Patroller : MonoBehaviour
     }
 
 
-    private void Update()
+    public void OnUpdate()
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
