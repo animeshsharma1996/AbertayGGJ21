@@ -85,7 +85,7 @@ public class GameManager : Singleton<GameManager>
         foundObj.transform.position = CurrentLevel.FoundSpawnTransform.position;
         lostObj.SetActive(true);
         lostObj.GetComponent<Killable>().IsAlive = true;
-        //foundObj.SetActive(true);
+        foundObj.SetActive(true);
         UIManager.Instance.ResetAllKeysUI();
         KeyManager.instance.ResetKeys();
         UIManager.Instance.ResetAllLivesUI();

@@ -25,7 +25,13 @@ public class GameScript : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             GameManager.Instance.LostObj.SetActive(false);
+            GameManager.Instance.FoundObj.SetActive(false);
             GameManager.Instance.RestartLevel();
+
+            foreach (Patroller patroller in patrollers)
+            {
+                patroller.gameObject.SetActive(true);
+            }
         }
 
         foreach(PlayerAnimation playerAnimation in playerAnimations)
