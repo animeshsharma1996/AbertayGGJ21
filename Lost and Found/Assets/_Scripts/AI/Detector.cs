@@ -11,7 +11,7 @@ public class Detector : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
+        players = GameObject.FindGameObjectsWithTag("Lost");
     }
 
     public void OnUpdate()
@@ -27,7 +27,7 @@ public class Detector : MonoBehaviour
                 if (Physics.Raycast(transform.position, vectorToPlayer.normalized, out hit, range))
                 {
                     GameObject playerFound = hit.collider.gameObject;
-                    if (hit.collider.gameObject.tag == "Player")
+                    if (hit.collider.gameObject.tag == "Lost")
                     {
                         Killable killable = playerFound.GetComponent<Killable>();
                         if(killable != null)

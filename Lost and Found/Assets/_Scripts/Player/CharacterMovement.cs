@@ -56,5 +56,7 @@ public class CharacterMovement : MonoBehaviour
         currentSpeed = Mathf.SmoothDamp(currentSpeed, vTargetSpeed, ref speedSmoothVelocity, speedSmoothTime);
 
         controller.Move(vInputDir * currentSpeed * Time.deltaTime);
+
+        transform.position = new Vector3(transform.position.x,0.49f,transform.position.z);
     }
 }
