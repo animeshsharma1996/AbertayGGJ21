@@ -50,7 +50,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20.7
+  m_Radius: 20
   m_Center: {x: 0, y: -8, z: 0}
 --- !u!143 &1558273706406145563
 CharacterController:
@@ -64,7 +64,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 8
   m_SlopeLimit: 0
   m_StepOffset: 0
   m_SkinWidth: 0.08
@@ -114,6 +114,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -199,6 +200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1558273706406145562}
     m_Modifications:
+    - target: {fileID: 1708855718256620793, guid: 644494bc8353e134595cde2f3406041f,
+        type: 3}
+      propertyPath: m_Version
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1708855718256620794, guid: 644494bc8353e134595cde2f3406041f,
         type: 3}
       propertyPath: m_RootOrder
