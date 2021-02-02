@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameScript : MonoBehaviour
 {
+    [SerializeField] private GameObject mainMenuCanvas;
+
     private PlayerAnimation[] playerAnimations = null;
     private EnemyAnimation[] enemyAnimations = null;
     private Detector[] detectors = null;
@@ -24,17 +26,10 @@ public class GameScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R))
         {
-            GameManager.Instance.LostObj.SetActive(false);
-            GameManager.Instance.FoundObj.SetActive(false);
-            GameManager.Instance.RestartLevel();
-
-            foreach (Patroller patroller in patrollers)
-            {
-                patroller.gameObject.SetActive(true);
-            }
+            RestartLevel();
         }
 
-        foreach(PlayerAnimation playerAnimation in playerAnimations)
+        foreach (PlayerAnimation playerAnimation in playerAnimations)
         {
             if (playerAnimation.isActiveAndEnabled)
             {
@@ -65,5 +60,23 @@ public class GameScript : MonoBehaviour
                 patroller.OnUpdate();
             }
         }
+    }
+
+    private void RestartLevel()
+    {
+        GameManager.Instance.LostObj.SetActive(false);
+        GameManager.Instance.FoundObj.SetActive(false);
+        GameManager.Instance.RestartLevel();
+
+        foreach (Patroller patroller in patrollers)
+        {
+            patroller.gameObject.SetActive(true);
+        }
+    }
+
+    public void PlayGame()
+    {
+        RestartLevel();
+        mainMenuCanvas.SetActive(false);
     }
 }
