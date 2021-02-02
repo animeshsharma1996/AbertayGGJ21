@@ -6,22 +6,33 @@ using UnityEngine;
 public class EnemySpawner : Singleton<EnemySpawner>
 {
     [SerializeField] private GameObject enemy = null;
-    //[SerializeField] private int enemyPool = 0;
     [SerializeField] private PatrolPoints[] enemyPositions = null;
-
     public GameObject[] levelPoints = null;
+
+    private List<GameObject> enemies = new List<GameObject>();
 
     public void Initialise()
     {
-        for(int i = 0; i < enemyPositions.Length; ++i)
+        if (enemies.Count == 0)
         {
-            if (enemyPositions[i].isActiveAndEnabled)
+            for (int i = 0; i < enemyPositions.Length; ++i)
             {
-                GameObject enemyObject = Instantiate(enemy, enemyPositions[i].patrolPoints[0].position, enemyPositions[i].patrolPoints[0].rotation);
-
-                enemyObject.GetComponent<Patroller>().points = enemyPositions[i].patrolPoints;
-                enemyObject.GetComponent<Patroller>().Initialise();
+                if (enemyPositions[i].isActiveAndEnabled)
+                {
+                    GameObject enemyObject = Instantiate(enemy, enemyPositions[i].patrolPoints[0].position, enemyPositions[i].patrolPoints[0].rotation);
+                    enemyObject.GetComponent<Patroller>().points = enemyPositions[i].patrolPoints;
+                    enemyObject.GetComponent<Patroller>().Initialise();
+                    enemies.Add(enemyObject);
+                }
             }
+        }
+    }
+
+    public void ResetEnemies()
+    {
+        if(enemies != null)
+        {
+            enemies.Clear();
         }
     }
 }
