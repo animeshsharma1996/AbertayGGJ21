@@ -14,8 +14,7 @@ public class Detector : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
     }
 
-    // Update is called once per frame
-    private void Update()
+    public void OnUpdate()
     {
         foreach(GameObject player in players)
         {

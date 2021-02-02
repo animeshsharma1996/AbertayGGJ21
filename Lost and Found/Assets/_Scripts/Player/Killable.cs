@@ -102,4 +102,9 @@ public class Killable : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
     }
+
+    public void SetCurrentLives(int value)
+    {
+        currentLives = value;
+    }
 }

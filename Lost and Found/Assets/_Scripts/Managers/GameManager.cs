@@ -25,8 +25,11 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public GameObject LostObj { get { return lostObj; } }
+    public GameObject FoundObj { get { return foundObj; } }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Camera.main.transform.position = CurrentLevel.CameraTransform.position;
         StartLevel();
@@ -82,7 +85,7 @@ public class GameManager : Singleton<GameManager>
         foundObj.transform.position = CurrentLevel.FoundSpawnTransform.position;
         lostObj.SetActive(true);
         lostObj.GetComponent<Killable>().IsAlive = true;
-        //foundObj.SetActive(true);
+        foundObj.SetActive(true);
         UIManager.Instance.ResetAllKeysUI();
         KeyManager.instance.ResetKeys();
         UIManager.Instance.ResetAllLivesUI();

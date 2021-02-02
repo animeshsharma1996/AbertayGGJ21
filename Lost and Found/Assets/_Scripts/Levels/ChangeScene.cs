@@ -10,8 +10,7 @@ public class ChangeScene : MonoBehaviour
 
     public void ChangeToNextScene()
     {
-        SceneManager.LoadScene(sceneIndexToLoad);
-        //SceneManager.LoadSceneAsync(sceneIndexToLoad);
+        SceneManager.LoadSceneAsync(sceneIndexToLoad);
     }
 
     public void PlayGame()

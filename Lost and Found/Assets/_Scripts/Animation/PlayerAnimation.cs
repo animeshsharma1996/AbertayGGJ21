@@ -17,8 +17,7 @@ public class PlayerAnimation : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    private void Update()
+    public void OnUpdate()
     {
         if(Input.GetKey(up))
         {

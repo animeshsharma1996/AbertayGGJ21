@@ -50,7 +50,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 13.51
+  m_Radius: 13
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &799713222989190137
 CharacterController:
@@ -64,7 +64,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1
-  m_Radius: 0.5
+  m_Radius: 18
   m_SlopeLimit: 0
   m_StepOffset: 0
   m_SkinWidth: 0.08
@@ -129,6 +129,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -280,6 +281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3842423204311254651, guid: c0d66f411a506994899330c9624ba0cc,
+        type: 3}
+      propertyPath: m_Version
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3842423204311254652, guid: c0d66f411a506994899330c9624ba0cc,
         type: 3}
